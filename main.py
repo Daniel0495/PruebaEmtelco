@@ -46,7 +46,7 @@ def delete():
 def update():
     data = request.json
     db = database_manage()
-    status = db.insert_database(data)
+    status = db.insert_database(data, update=True)
     if status == 200:
         return make_response({'message': 'Datos insertados correctamente'}, status)
     else:
